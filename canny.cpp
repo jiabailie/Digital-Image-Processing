@@ -154,7 +154,7 @@ void deNoiseFilter(int width, int height, long bmpSize, int param[], unsigned ch
 			tmp = INDEX(i, j, width);
 			for(z = 0; z < 3; z++)
 			{
-			    data[tmp + z] =	(unsigned char)(roundPixelValue(tmpRGB[z]));
+			    data[tmp + z] = (unsigned char)(roundPixelValue(tmpRGB[z]));
 			}
 		}
 	}
