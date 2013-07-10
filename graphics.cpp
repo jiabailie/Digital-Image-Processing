@@ -2,12 +2,11 @@
 #include "canny.h"
 #include "io.h"
 #include "common.h"
-#include "repixels.h"
 
 //打开bmp文件
 void Open(char* path, BMPIMAGE image, BMPINFO info)
 {
-  int rgb;
+  	int rgb;
 	long bmpSize;
 
 	FILE * pFile;
