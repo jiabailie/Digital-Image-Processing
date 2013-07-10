@@ -5,43 +5,22 @@
 #undef DEBUG_PRINT_ANGLE
 #undef DEBUG_REMOVE_PIXEL
 
-int CANNY_FACTOR[4][4] = {{ 0,  -1,  0,  1}, 
-                          {-1,   0,  1,  0}, 
-                          {-1,  -1,  1,  1}, 
-                          {-1,   1,  1, -1}};
-                           
-int filters[Filter_Num][9] = {{ 5,  5,  5,
-  						   -3,  1, -3,
-							   -3, -3, -3}, // 0 kirsch1
+int CANNY_FACTOR[4][4] = {	{ 0,  -1,  0,  1}, 
+				{-1,   0,  1,  0}, 
+				{-1,  -1,  1,  1}, 
+				{-1,   1,  1, -1}
+			};
 
-							  {-3, -3, -3,
-							   -3,  1, -3,
-							    5,  5,  5}, // 1 kirsch2
-
-							  { 5, -3, -3,
-							    5,  1, -3,
-							    5, -3, -3}, // 2 kirsch3
-
-							  { 1,  2,  1,
-							    0,  1,  0,
-							   -1, -2, -1}, // 3 robinson
-
-							  { 1,  0, -1, 
-							    2,  1, -2,
-							    1,  0, -1}, //  4 sobelx
-
-							  { 1,  2,  1,
-							    0,  1,  0,
-							   -1, -2, -1},//  5 sobely
-
-							  { 0, -1,  0,
-							   -1,  1,  1,
-							    0,  1,  0},//  6 rightbottom
-
-                              { 0,  0,  0,
-							    0,  1,  0,
-								0,  0,  0} //  7 original
-                                          };
+int filters[Filter_Num][9] = 
+			{	{5,  5,  5, -3,  1, -3, -3, -3, -3}, 	// 0 kirsch1
+				{-3, -3, -3, -3,  1, -3, 5, 5, 5}, 	// 1 kirsch2
+				{ 5, -3, -3, 5,  1, -3, 5, -3, -3}, 	// 2 kirsch3
+				{ 1,  2,  1, 0,  1,  0, -1, -2, -1}, 	// 3 robinson
+				{ 1,  0, -1, 2,  1, -2, 1,  0, -1}, 	//  4 sobelx
+				{ 1,  2,  1, 0,  1,  0, -1, -2, -1},	//  5 sobely
+				{ 0, -1,  0, -1,  1,  1, 0,  1,  0},	//  6 rightbottom
+				{ 0,  0,  0, 0,  1,  0, 0,  0,  0} 	//  7 original
+			};
 
 // the main branch which controls the process
 void cannyEdgesDetector(int filterBranch, int width, int height, long bmpSize, unsigned char*& data)
