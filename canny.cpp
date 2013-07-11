@@ -41,10 +41,7 @@ void cannyEdgesDetector(int filterBranch, int width, int height, long bmpSize, u
 
 	findNonZeroBits(filterBranch, positions);
 
-	for(pos = 0; pos < bmpSize; pos++)
-	{
-		fake[pos] = data[pos];
-	}
+	memcpy(fake, data, sizeof(unsigned char) * bmpSize);
 
 	// noise reduction
 	for(i = 0; i < Filter_Num; i++)
