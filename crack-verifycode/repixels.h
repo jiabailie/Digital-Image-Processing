@@ -25,5 +25,3 @@ void removelonelypixel(int width, int height, unsigned char* data);
 
 // stuff the edge with background color (black)
 void filledges(int width, int height, unsigned char* data);
-
-inline void subfilledges(int left, int right, int top, int bottom, int increment, unsigned char* data);

@@ -348,8 +348,3 @@ void filledges(int width, int height, unsigned char* data)
 		}
 	}
 }
-
-inline void subfilledges(int left, int right, int top, int bottom, int v_increment, int h_increment, unsigned char* data)
-{
-	
-}
