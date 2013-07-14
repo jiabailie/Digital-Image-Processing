@@ -5,7 +5,8 @@
 #undef DEBUG_PRINT_ANGLE
 #undef DEBUG_REMOVE_PIXEL
 
-int CANNY_FACTOR[4][4] = {	{ 0,  -1,  0,  1}, 
+int CANNY_FACTOR[4][4] = {	
+				{ 0,  -1,  0,  1}, 
 				{-1,   0,  1,  0}, 
 				{-1,  -1,  1,  1}, 
 				{-1,   1,  1, -1}
