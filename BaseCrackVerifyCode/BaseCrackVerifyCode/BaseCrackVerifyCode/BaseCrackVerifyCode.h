@@ -48,10 +48,10 @@ using namespace std;
 //**************modify this for correctness test*********************//
 	
 #ifdef	_USE_BAT_FILE_
-#define TEMPLATE_SAVE_PATH		"..\\..\\data\\moments.txt" 
+#define TEMPLATE_SAVE_PATH	"..\\..\\data\\moments.txt" 
 #define SAVE_PROPER_DISTANCE	"..\\..\\data\\distance.txt"
 #elif
-#define TEMPLATE_SAVE_PATH		"..\\data\\moments.txt"
+#define TEMPLATE_SAVE_PATH	"..\\data\\moments.txt"
 #define SAVE_PROPER_DISTANCE	"..\\data\\distance.txt"
 #endif
 //*******************************************************************//
@@ -265,8 +265,8 @@ namespace CrackVerifyCode
 	};
 
 	typedef RGBQUAD*	BITMAPQUAD;
-	typedef FILEHEADER* BITMAPFILEHEADER;
-	typedef INFOHEADER* BITMAPINFOHEADER;
+	typedef FILEHEADER* 	BITMAPFILEHEADER;
+	typedef INFOHEADER*	BITMAPINFOHEADER;
 	typedef bmpImage*	BMPIMAGE;
 	typedef infoFetch*	BMPINFO;
 
