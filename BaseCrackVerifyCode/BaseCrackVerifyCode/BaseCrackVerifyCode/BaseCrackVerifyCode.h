@@ -62,54 +62,54 @@ typedef unsigned short WORD;
 typedef unsigned long  DWORD;
 
 const int FILE_OPEN_SUCCESS		= 0;
-const int FILE_NOT_EXIST	    = -1;
+const int FILE_NOT_EXIST	    	= -1;
 const int FILE_WRITE_ERROR		= -2;
-const int REMOVE_LONELY_PIXEL	= 1;	// the operation times of remove lonely pixels
+const int REMOVE_LONELY_PIXEL		= 1;	// the operation times of remove lonely pixels
 const int IMAGE_GROW_TIMES		= 6;	// execute how many times of image growing
 const int IMAGE_GROW_DIMES		= 4;	// the dimensions of image growing directions
-const int MAX_RANGE				= 20;	// the max range to search for a same pixel
+const int MAX_RANGE			= 20;	// the max range to search for a same pixel
 const int CHARACTER_NUM			= 4;	// the number of characters in one image
-const int PIXELNUM				= 256;
+const int PIXELNUM			= 256;
 const int FILEHEADERSIZE		= 14;
 const int INFOHEADERSIZE		= 40;
 const int BMPHEADERSIZE			= 54 ;
 const int Filter_Num			= 8;
-const int SobelX				= 4;
-const int SobelY				= 5;
+const int SobelX			= 4;
+const int SobelY			= 5;
 const int PathLength			= 400;
 const int LineLength			= 1000;
-const int NumLength				= 10;
-const int BLACK					= 0;
-const int WHITE					= 255;
-const int MIN_WIDTH				= 20;	// the approximate width of each character
+const int NumLength			= 10;
+const int BLACK				= 0;
+const int WHITE				= 255;
+const int MIN_WIDTH			= 20;	// the approximate width of each character
 const int TEMPLATE_COUNT		= 36;
 const int MOMENTS_LENGTH		= 6;
 const bool BOOL_WHITE			= true;
 const double MIN_NUMBER			= 0.1e-16;
-const double PROPER_DISTANCE	= 5000;
-const double PI					= 3.1415926;
+const double PROPER_DISTANCE		= 5000;
+const double PI				= 3.1415926;
 
-const int p_value 				= 127;
+const int p_value 			= 127;
 
-const BYTE c_BLACK				= 0;
-const BYTE c_WHITE				= 255;
+const BYTE c_BLACK			= 0;
+const BYTE c_WHITE			= 255;
 
 const int DT_CHANGE_WHITE		= 0;	// not change white
 const int DO_CHANGE_WHITE		= 1;	// change white
 
-const long DT_CHANGE_WHITE_TIMES = 0;	// the times of procession do not change white
-const long DO_CHANGE_WHITE_TIMES = 1;	// the times of procession do change white
+const long DT_CHANGE_WHITE_TIMES 	= 0;	// the times of procession do not change white
+const long DO_CHANGE_WHITE_TIMES 	= 1;	// the times of procession do change white
 
-const int DIREC_ARRAY_LEN = 4;
+const int DIREC_ARRAY_LEN 		= 4;
 
 const int MASK[11] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
-const int FILE_ACCESS_STATUS_SUCCESS			= 0;
-const int FILE_ACCESS_STATUS_NOT_EXIST			= 1;
+const int FILE_ACCESS_STATUS_SUCCESS	= 0;
+const int FILE_ACCESS_STATUS_NOT_EXIST	= 1;
 
 // file type
-const int BMPTYPE = 0;
-const int TXTTYPE = 1;
+const int BMPTYPE 			= 0;
+const int TXTTYPE 			= 1;
 
 template <class T>
 inline T iABS(T X)
