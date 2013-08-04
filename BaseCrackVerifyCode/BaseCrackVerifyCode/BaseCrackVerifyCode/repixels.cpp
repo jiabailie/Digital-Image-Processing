@@ -16,7 +16,7 @@ namespace CrackVerifyCode
 									//{-1,  -1,  1, -1}, 
 									//{ 1,  -1,  1,  1}, 
 									//{ 1,   1, -1,  1}
-								};
+						 };
 
 	repixels::repixels(int dt_change, int do_change, int width, int height, long bmpSize, BYTE* data, BYTE ret[CHARACTER_NUM], const char* openFile)
 	{
@@ -28,7 +28,7 @@ namespace CrackVerifyCode
 		averagepixels(bmpSize, data);
 		common::binarization(bmpSize, data);
 
-		BYTE* fake	   = (BYTE*)malloc(sizeof(BYTE) * width * height);
+		BYTE* fake     = (BYTE*)malloc(sizeof(BYTE) * width * height);
 		BYTE* dt_data  = (BYTE*)malloc(sizeof(BYTE) * width * height);
 		BYTE* do_data  = (BYTE*)malloc(sizeof(BYTE) * width * height);
 
