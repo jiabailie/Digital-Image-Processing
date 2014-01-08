@@ -11,7 +11,7 @@
 #define PROCESS_REMOVEBLA_PATH  "..\\bmp\\removeblackpixels.bmp"
 #define PROCESS_TEXT_SAVE_PATH  "..\\data\\"
 
-const int REMOVE_TIMES  		= 1;
+const int REMOVE_TIMES			= 1;
 const int MAX_RANGE				= 250;
 const int PIXELNUM				= 256;
 const int FILEHEADERSIZE		= 14;
@@ -42,10 +42,10 @@ const int MASK[11]			= {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
 enum canny_direction
 {
-	CANNY_HORIZONTAL		= 0, // 90
-	CANNY_VERTICAL			= 1, // 0
-	CANNY_LEFT_DIAGONAL		= 2, // 45
-	CANNY_RIGHT_DIAGONAL	= 3  // -45
+		CANNY_HORIZONTAL		= 0, // 90
+		CANNY_VERTICAL			= 1, // 0
+		CANNY_LEFT_DIAGONAL		= 2, // 45
+		CANNY_RIGHT_DIAGONAL	= 3  // -45
 };
 
 // file type
@@ -55,25 +55,25 @@ const int TXTTYPE = 1;
 template <class T>
 inline T iABS(T X)
 {
-	return X > 0 ? X : -X;
+		return X > 0 ? X : -X;
 }
 
 template <class T>
 inline T imax(T X, T Y)
 {
-	return X > Y ? X : Y;
+		return X > Y ? X : Y;
 }
 
 template <class T>
 inline T imin(T X, T Y)
 {
-	return X < Y ? X : Y;
+		return X < Y ? X : Y;
 }
 
 // get the angle through the value of tan
 inline double getAngle(int gradientX, int gradientY)
 {
-	return 180 * atan(gradientY * 1.0 / gradientX) / PI;
+		return 180 * atan(gradientY * 1.0 / gradientX) / PI;
 }
 
 // round the pixel value
@@ -81,7 +81,7 @@ inline double getAngle(int gradientX, int gradientY)
 // if value < 0,   then set value = 0
 inline int roundPixelValue(int value)
 {
-	return value > 255 ? 255 : (value < 0 ? 0 : value);
+		return value > 255 ? 255 : (value < 0 ? 0 : value);
 }
 
 // calculate the index value of point(x,y)
@@ -89,7 +89,7 @@ inline int roundPixelValue(int value)
 template <class T>
 inline T INDEX(T X, T Y, T Width)
 {
-	return (X * Width + Y) * 3;
+		return (X * Width + Y) * 3;
 }
 
 typedef unsigned char  BYTE;
@@ -126,9 +126,9 @@ typedef struct tagBITMAPINFOHEADER{
 } INFOHEADER, *BITMAPINFOHEADER;// this data struct takes up 40 bytes.
 
 typedef struct image {
-	INFOHEADER infoHeader;		// bitmap info header
-	FILEHEADER fileHeader;		// bitmap file header
-	RGBQUAD	   rgbQuad;
+	INFOHEADER	infoHeader;		// bitmap info header
+	FILEHEADER	fileHeader;		// bitmap file header
+	RGBQUAD		rgbQuad;
 } bmpImage, *BMPIMAGE;
 
 typedef struct fetch {
