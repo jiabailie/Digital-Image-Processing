@@ -3,7 +3,7 @@
 #include "io.h"
 #include "common.h"
 
-//打开bmp文件
+// open bitmap file
 void Open(char* path, BMPIMAGE image, BMPINFO info)
 {
   	int rgb;
@@ -21,17 +21,17 @@ void Open(char* path, BMPIMAGE image, BMPINFO info)
 	}
 	else
 	{
-		//读取bmp文件长度
+		// get the length this bitmap file
 		fseek(pFile, 0, SEEK_END);
 		bmpSize = ftell(pFile);
 		rewind(pFile);
 
-		fread(&(image->fileHeader), 1, FILEHEADERSIZE, pFile);//读取bmp文件头
-		fread(&(image->infoHeader), 1, INFOHEADERSIZE, pFile);//读取bmp信息头
+		fread(&(image->fileHeader), 1, FILEHEADERSIZE, pFile);// get the file header of this file
+		fread(&(image->infoHeader), 1, INFOHEADERSIZE, pFile);// get the info header of this bitmap
 
-		info->w = image->infoHeader.biWidth; //读取图片宽度
-		info->h = image->infoHeader.biHeight;//读取图片高度
-		info->bitCount = image->infoHeader.biBitCount; //读取biBitCount值
+		info->w = image->infoHeader.biWidth;
+		info->h = image->infoHeader.biHeight;
+		info->bitCount = image->infoHeader.biBitCount;
 
 		switch(image->infoHeader.biBitCount)
 		{
@@ -52,16 +52,20 @@ void Open(char* path, BMPIMAGE image, BMPINFO info)
 		}
 
 		fread(&(image->rgbQuad), rgb * sizeof(RGBQUAD), 1, pFile);
-		if(image->infoHeader.biBitCount == 24) //如果图片为真彩色
+		if(image->infoHeader.biBitCount == 24)
 		{
-			info->bmpSize = bmpSize - FILEHEADERSIZE - INFOHEADERSIZE;	//计算bmp文件图形数据长度
+			// calculate the data length of this image file
+			info->bmpSize = bmpSize - FILEHEADERSIZE - INFOHEADERSIZE;
+			
 			info->data = (BYTE *)malloc(sizeof(BYTE) * (bmpSize - FILEHEADERSIZE - INFOHEADERSIZE));
-			fread(info->data, 1, bmpSize - FILEHEADERSIZE - INFOHEADERSIZE, pFile); //读取bmp图形数据部分
+			
+			// get the data part this file
+			fread(info->data, 1, bmpSize - FILEHEADERSIZE - INFOHEADERSIZE, pFile);
 
 			repixels(info->w, info->h, info->bmpSize, info->data);
 		}
 
-		//计算每行的数据长度
+		// calculate the data length per line
 		info->lenLine = ((image->infoHeader.biBitCount * image->infoHeader.biWidth) + 31) / 8;
 
 		fclose(pFile);
@@ -70,7 +74,7 @@ void Open(char* path, BMPIMAGE image, BMPINFO info)
 	}
 }
 
-//保存为bmp文件(biBitCount为24)
+// save the bitmap file(biBitCount=24)
 void Save(char* path, BMPIMAGE image, BMPINFO info)
 {
 	FILE * pFile;
@@ -112,15 +116,18 @@ void Save(char* path, BMPIMAGE image, BMPINFO info)
 	else
 	{
 		fwrite(header, sizeof(unsigned char), 54, pFile);
-
-		lineLength = width * bytePerpixel;	//每行数据长度大致为图像宽度乘以每像素的字节数
-
-		while(lineLength % 4 != 0)			//修正lineLength使其为4的倍数
+		
+		// data length per line = image width * bytes amount of each pixel
+		lineLength = width * bytePerpixel;
+		
+		// modify lineLength, setting as the times of 4
+		while(lineLength % 4 != 0)
 		{
 			lineLength++;
 		}
-
-		totalLength = lineLength * height;	//数据总长 = 每行长度 * 图像高度
+		
+		// data length = data length per line * image height
+		totalLength = lineLength * height;
 
 		fwrite(info->data, sizeof(unsigned char), (size_t)totalLength, pFile);
 		fclose(pFile);
