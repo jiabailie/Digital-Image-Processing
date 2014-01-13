@@ -41,7 +41,7 @@ using namespace std;
 #define PROCESS_FILE_SAVE_PATH  "..\\bmp\\"
 #define PROCESS_REMOVEBLA_PATH  "..\\bmp\\remove_pixels"
 #define PROCESS_TEXT_SAVE_PATH  "..\\data\\"
-#define BMP_TEMPLATE_SAVE_PATH  "E:\\Projects\\CrackVerifyCode\\GenerateVerifyCode\\data\\1.bmp"
+#define BMP_TEMPLATE_SAVE_PATH  "..\\data\\1.bmp"
 
 //**************modify this for correctness test*********************//	
 #ifdef	_USE_BAT_FILE_
@@ -105,8 +105,8 @@ const int FILE_ACCESS_STATUS_SUCCESS    = 0;
 const int FILE_ACCESS_STATUS_NOT_EXIST  = 1;
 
 // file type
-const int BMPTYPE                = 0;
-const int TXTTYPE                = 1;
+const int BMPTYPE = 0;
+const int TXTTYPE = 1;
 
 template <class T>
 inline T iABS(T X)
@@ -155,43 +155,43 @@ namespace CrackVerifyCode
 	};
 
 	struct RGBQUAD {
-		BYTE rgbBlue;	
-		BYTE rgbGreen;	
-		BYTE rgbRed;		
+		BYTE rgbBlue;
+		BYTE rgbGreen;
+		BYTE rgbRed;
 		BYTE rgbReserved;
 	};
 	struct FILEHEADER {
-		WORD  bfType;		
-		DWORD bfSize;		
+		WORD  bfType;
+		DWORD bfSize;
 		WORD  bfReserved1;
 		WORD  bfReserved2;
-		DWORD bfOffBits;	
+		DWORD bfOffBits;
 	};
 	struct INFOHEADER {
-		DWORD biSize;			
-		DWORD biWidth;			
-		DWORD biHeight;		
-		WORD  biPlanes;		
-		WORD  biBitCount;		
-		DWORD biCompression;	
-		DWORD biSizeImage;		
-		DWORD biXPelsPerMeter;	
-		DWORD biYPelsPerMeter;	
-		DWORD biClrUsed;		
-		DWORD biClrImportant;	
+		DWORD biSize;
+		DWORD biWidth;
+		DWORD biHeight;
+		WORD  biPlanes;
+		WORD  biBitCount;
+		DWORD biCompression;
+		DWORD biSizeImage;
+		DWORD biXPelsPerMeter;
+		DWORD biYPelsPerMeter;
+		DWORD biClrUsed;
+		DWORD biClrImportant;
 	};
 	struct bmpImage {
-		INFOHEADER infoHeader;	
-		FILEHEADER fileHeader;	
-		RGBQUAD	   rgbQuad;		
+		INFOHEADER infoHeader;
+		FILEHEADER fileHeader;
+		RGBQUAD	   rgbQuad;	
 	};
 	struct infoFetch {
-		int w;			
-		int h;			
-		int bitCount;	
-		int lenLine;	
-		long bmpSize;	
-		BYTE * data;	
+		int w;
+		int h;
+		int bitCount;
+		int lenLine;
+		long bmpSize;
+		BYTE * data;
 
 		infoFetch() : data(0) {}
 		~infoFetch()
