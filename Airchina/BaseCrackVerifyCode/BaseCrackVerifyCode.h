@@ -12,7 +12,7 @@
 #undef  DEBUG_ERROR
 
 #define DEBUG_FIND_PROPER_DISTANCE
-#undef	DEBUG_FIND_PROPER_DISTANCE
+#undef  DEBUG_FIND_PROPER_DISTANCE
 
 #include <stdio.h>
 #include <math.h>
@@ -43,8 +43,8 @@ using namespace std;
 #define PROCESS_TEXT_SAVE_PATH  "..\\data\\"
 #define BMP_TEMPLATE_SAVE_PATH  "..\\data\\1.bmp"
 
-//**************modify this for correctness test*********************//	
-#ifdef	_USE_BAT_FILE_
+//**************modify this for correctness test*********************//
+#ifdef  _USE_BAT_FILE_
 #define TEMPLATE_SAVE_PATH      "..\\..\\data\\moments.txt" 
 #define SAVE_PROPER_DISTANCE    "..\\..\\data\\distance.txt"
 #elif
