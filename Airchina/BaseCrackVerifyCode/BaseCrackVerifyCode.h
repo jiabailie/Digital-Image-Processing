@@ -1,7 +1,7 @@
 /**   
 * Title:     Crack the AirChina.com verify code
 * Author:    Ruiguo Yang (spotlightyrg@gmail.com)
-* Date:	     July 13th, 2013
+* Date:      July 13th, 2013
 */ 
 
 // BaseCrackVerifyCode.h
@@ -69,7 +69,7 @@ const int CHARACTER_NUM         = 4;  // the number of characters in one image
 const int PIXELNUM              = 256;
 const int FILEHEADERSIZE        = 14;
 const int INFOHEADERSIZE        = 40;
-const int BMPHEADERSIZE	        = 54;
+const int BMPHEADERSIZE         = 54;
 const int Filter_Num            = 8;
 const int SobelX                = 4;
 const int SobelY                = 5;
@@ -77,7 +77,7 @@ const int PathLength            = 400;
 const int LineLength            = 1000;
 const int NumLength             = 10;
 const int BLACK                 = 0;
-const int WHITE	                = 255;
+const int WHITE                 = 255;
 const int MIN_WIDTH             = 20;  // the approximate width of each character
 const int TEMPLATE_COUNT        = 36;
 const int MOMENTS_LENGTH        = 6;
@@ -261,11 +261,11 @@ namespace CrackVerifyCode
 		}
 	};
 
-	typedef RGBQUAD*	BITMAPQUAD;
-	typedef FILEHEADER* 	BITMAPFILEHEADER;
-	typedef INFOHEADER*	BITMAPINFOHEADER;
-	typedef bmpImage*	BMPIMAGE;
-	typedef infoFetch*	BMPINFO;
+	typedef RGBQUAD*    BITMAPQUAD;
+	typedef FILEHEADER* BITMAPFILEHEADER;
+	typedef INFOHEADER* BITMAPINFOHEADER;
+	typedef bmpImage*   BMPIMAGE;
+	typedef infoFetch*  BMPINFO;
 
 	class graphics
 	{
