@@ -106,14 +106,16 @@ typedef unsigned char  BYTE;
 typedef unsigned short WORD;
 typedef unsigned long  DWORD;
 
-typedef struct tagRGBQUAD {
+typedef struct tagRGBQUAD 
+{
   BYTE rgbBlue;     // value of blue
   BYTE rgbGreen;    // value of green
   BYTE rgbRed;      // value of red
   BYTE rgbReserved; // reservation
 } RGBQUAD, *BITMAPQUAD;
 
-typedef struct tagBITMAPFILEHEADER {
+typedef struct tagBITMAPFILEHEADER 
+{
   WORD  bfType;      // type of bitmap, should be "BM"
   DWORD bfSize;      // the size of this bitmap, counted by byte
   WORD  bfReserved1; // reservation segment, should be 0.
@@ -121,7 +123,8 @@ typedef struct tagBITMAPFILEHEADER {
   DWORD bfOffBits;   // the start position of bitmap data, using the offset to file head, counted by byte.
 } FILEHEADER, *BITMAPFILEHEADER;// the data struct takes up 14 bytes.
 
-typedef struct tagBITMAPINFOHEADER{
+typedef struct tagBITMAPINFOHEADER
+{
   DWORD biSize;       // how many bytes this struct takes.
   DWORD biWidth;      // the width of this bitmap, counted by pixels.
   DWORD biHeight;     // the height of this bitmap, counted also by pixels.
@@ -135,13 +138,15 @@ typedef struct tagBITMAPINFOHEADER{
   DWORD biClrImportant; // the amount of important colors during drawing this image
 } INFOHEADER, *BITMAPINFOHEADER;// this data struct takes up 40 bytes.
 
-typedef struct image {
+typedef struct image 
+{
   INFOHEADER infoHeader; // bitmap info header
   FILEHEADER fileHeader; // bitmap file header
   RGBQUAD    rgbQuad;
 } bmpImage, *BMPIMAGE;
 
-typedef struct fetch {
+typedef struct fetch 
+{
   int w;        // image width
   int h;        // image height
   int bitCount; // bitCount value

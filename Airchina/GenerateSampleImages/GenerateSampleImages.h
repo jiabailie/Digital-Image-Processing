@@ -23,11 +23,11 @@ typedef unsigned char  BYTE;
 typedef unsigned short WORD;
 typedef unsigned long  DWORD;
 
-const int REMOVE_LONELY_PIXEL = 1; // the operation times of remove lonely pixels
-const int IMAGE_GROW_TIMES    = 6; // execute how many times of image growing
-const int IMAGE_GROW_DIMES    = 4; // the dimensions of image growing directions
+const int REMOVE_LONELY_PIXEL = 1;  // the operation times of remove lonely pixels
+const int IMAGE_GROW_TIMES    = 6;  // execute how many times of image growing
+const int IMAGE_GROW_DIMES    = 4;  // the dimensions of image growing directions
 const int MAX_RANGE           = 20; // the max range to search for a same pixel
-const int CHARACTER_NUM       = 4; // the number of characters in one image
+const int CHARACTER_NUM       = 4;  // the number of characters in one image
 const int PIXELNUM            = 256;
 const int FILEHEADERSIZE      = 14;
 const int INFOHEADERSIZE      = 40;

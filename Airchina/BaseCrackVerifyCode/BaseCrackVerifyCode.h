@@ -154,20 +154,23 @@ namespace CrackVerifyCode
 		void CrackVerifyCode(const char* openFile, BYTE ret[CHARACTER_NUM]);
 	};
 
-	struct RGBQUAD {
+	struct RGBQUAD 
+	{
 		BYTE rgbBlue;
 		BYTE rgbGreen;
 		BYTE rgbRed;
 		BYTE rgbReserved;
 	};
-	struct FILEHEADER {
+	struct FILEHEADER 
+	{
 		WORD  bfType;
 		DWORD bfSize;
 		WORD  bfReserved1;
 		WORD  bfReserved2;
 		DWORD bfOffBits;
 	};
-	struct INFOHEADER {
+	struct INFOHEADER 
+	{
 		DWORD biSize;
 		DWORD biWidth;
 		DWORD biHeight;
@@ -180,18 +183,20 @@ namespace CrackVerifyCode
 		DWORD biClrUsed;
 		DWORD biClrImportant;
 	};
-	struct bmpImage {
+	struct bmpImage 
+	{
 		INFOHEADER infoHeader;
 		FILEHEADER fileHeader;
-		RGBQUAD	   rgbQuad;	
+		RGBQUAD    rgbQuad;
 	};
-	struct infoFetch {
+	struct infoFetch 
+	{
 		int w;
 		int h;
 		int bitCount;
 		int lenLine;
 		long bmpSize;
-		BYTE * data;
+		BYTE* data;
 
 		infoFetch() : data(0) {}
 		~infoFetch()
@@ -202,7 +207,8 @@ namespace CrackVerifyCode
 			}
 		}
 	};
-	struct Point {
+	struct Point 
+	{
 		int h;
 		int w;
 		Point() : h(0), w(0) {}
@@ -375,5 +381,4 @@ namespace CrackVerifyCode
 		BYTE distinguishOneCharacterByCos(int index, int width, BYTE* data, const char* openFile);
 	};
 }
-
 #endif
