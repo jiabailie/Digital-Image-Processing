@@ -1,4 +1,4 @@
-#ifndef	_CALMOMENT_H_
+#ifndef _CALMOMENT_H_
 #define _CALMOMENT_H_
 
 #include "CalculateTemplatesMoments.h"
