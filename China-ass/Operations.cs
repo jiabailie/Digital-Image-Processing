@@ -6,7 +6,7 @@ using System.Text;
 using System.IO;
 using System.Drawing;
 
-namespace China_SSS
+namespace ChinaSSS
 {
 	public class Config
 	{
