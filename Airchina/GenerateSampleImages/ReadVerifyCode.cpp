@@ -82,18 +82,18 @@ void Save(const char* path, long width, long height, BYTE* data)
 
 	long fileSize = width * height * 3 + 54;
 
-	header[2] = (BYTE)(fileSize & 0x000000ff);
-	header[3] = (fileSize >> 8) & 0x000000ff;
+	header[2] = (BYTE)(fileSize  & 0x000000ff);
+	header[3] = (fileSize >> 8)  & 0x000000ff;
 	header[4] = (fileSize >> 16) & 0x000000ff;
 	header[5] = (fileSize >> 24) & 0x000000ff;
 
-	header[18] = width & 0x000000ff;
-	header[19] = (width >> 8) & 0x000000ff;
+	header[18] = width         & 0x000000ff;
+	header[19] = (width >> 8)  & 0x000000ff;
 	header[20] = (width >> 16) & 0x000000ff;
 	header[21] = (width >> 24) & 0x000000ff;
 
-	header[22] = height & 0x000000ff;
-	header[23] = (height >> 8) & 0x000000ff;
+	header[22] = height         & 0x000000ff;
+	header[23] = (height >> 8)  & 0x000000ff;
 	header[24] = (height >> 16) & 0x000000ff;
 	header[25] = (height >> 24) & 0x000000ff;
 
