@@ -43,8 +43,8 @@ public class ImageRotation
         nW = Convert.ToInt32(correct + Math.Abs(sH * sinA) + Math.Abs(sW * cosA));
         nH = Convert.ToInt32(correct + Math.Abs(sH * cosA) + Math.Abs(sW * sinA));
 
-        CH = 0.5 * (-nH * cosA + nW * sinA + sH);
-        CW = 0.5 * (-nH * sinA - nW * cosA + sW);
+        CH = 0.5 * (sH - nH * cosA + nW * sinA);
+        CW = 0.5 * (sW - nH * sinA - nW * cosA);
 
         while (nW % 4 != 0) { ++nW; }
 
