@@ -18,17 +18,14 @@ public class ImageRotation
         int nW = 0, nH = 0;
         int rposH = 0, rposW = 0;
         int i = 0, m = 0, n = 0;
-        int leftH = 0, leftW = 0;
-        int rightH = 0, rightW = 0;
         int tR = 0, tG = 0, tB = 0;
         int cur = 0, pos = 0, mask = 255;
+        double CH = 0.0, CW = 0.0;
 
         int[] validKey = new int[9];
         int[] validValue = new int[9];
 
-        double C1 = 0.0, C2 = 0.0;
-        double D1 = 0.0, D2 = 0.0;
-        double correct = 0.5, half = 0.5;
+        double correct = 0.5;
         double sinA = 0.0, cosA = 0.0;
 
         while (angle < 0) { angle += 360; }
@@ -46,11 +43,8 @@ public class ImageRotation
         nW = Convert.ToInt32(correct + Math.Abs(sH * sinA) + Math.Abs(sW * cosA));
         nH = Convert.ToInt32(correct + Math.Abs(sH * cosA) + Math.Abs(sW * sinA));
 
-        C1 = ((nH + correct) - (sH + correct) * cosA - (sW + correct) * sinA) * half;
-        C2 = ((nW + correct) + (sH + correct) * sinA - (sW + correct) * cosA) * half;
-
-        D1 = -C1 * cosA + C2 * sinA;
-        D2 = -C1 * sinA - C2 * cosA;
+        CH = 0.5 * (-nH * cosA + nW * sinA + sH);
+        CW = 0.5 * (-nH * sinA - nW * cosA + sW);
 
         while (nW % 4 != 0) { ++nW; }
 
@@ -71,8 +65,8 @@ public class ImageRotation
                     cur = 0;
                     pos = 0;
 
-                    rposH = Convert.ToInt32(ih * cosA - iw * sinA + D1);
-                    rposW = Convert.ToInt32(ih * sinA + iw * cosA + D2);
+                    rposH = Convert.ToInt32(ih * cosA - iw * sinA + CH);
+                    rposW = Convert.ToInt32(ih * sinA + iw * cosA + CW);
 
                     for (i = 0; i < 9; validKey[i] = validValue[i] = -1, ++i) ;
 
